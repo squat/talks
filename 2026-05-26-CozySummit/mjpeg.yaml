@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: mjpeg
+  name: mjpeg
+spec:
+  ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: http
+  selector:
+    app.kubernetes.io/name: mjpeg
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mjpeg
+  labels:
+    app.kubernetes.io/name: mjpeg
+spec:
+  containers:
+    - name: kceu
+      image: squat/kubeconeu2019
+      command:
+        - /cam2ip
+      args:
+        - --bind-addr=:8080
+      ports:
+        - containerPort: 8080
+          name: http
+      resources:
+        limits:
+          devic.es/video: 1

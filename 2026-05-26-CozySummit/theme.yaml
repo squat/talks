@@ -1,0 +1,65 @@
+default:
+  margin:
+    percent: 8
+  colors:
+    foreground: 585858
+    background: fdf6e3
+
+intro_slide:
+  title:
+    alignment: center
+    colors:
+      background: afffd7
+    font_size: 3
+  subtitle:
+    alignment: center
+  event:
+    alignment: center
+  location:
+    alignment: center
+  date:
+    alignment: center
+  author:
+    alignment: center
+    positioning: page_bottom
+  footer: false
+
+slide_title:
+  alignment: left
+  prefix: "██"
+  bold: true
+  colors:
+    background: afffd7
+    foreground: 585858
+
+headings:
+  h1:
+    prefix: "██"
+    bold: true
+    colors:
+      background: afffd7
+      foreground: 585858
+  h2:
+    prefix: "▓▓▓"
+    bold: true
+    colors:
+      background: d7ffff
+      foreground: 585858
+  h3:
+    prefix: "▒▒▒▒"
+    bold: true
+    colors:
+      foreground: ff0087
+
+block_quote:
+  prefix: "│ "
+
+code:
+  padding:
+    horizontal: 2
+    vertical: 1
+
+footer:
+  style: template
+  left: "{title}"
+  right: "{current_slide} / {total_slides}"
